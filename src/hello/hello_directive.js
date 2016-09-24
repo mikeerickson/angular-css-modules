@@ -1,6 +1,5 @@
 import styles from './hello.css';
 
-
 const $inject = [];
 const Hello = () => {
   const link = $scope => {

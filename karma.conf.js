@@ -10,18 +10,32 @@ var include = [
 var preLoaders = hasCoverage ? [
 
   // Process test code with Babel
-  {test: /\.spec\.js$/, loader: 'babel', include: include},
+  {
+    test: /\.spec\.js$/,
+    loader: 'babel',
+    include: include
+  },
 
   // Process all non-test code with Isparta
-  {test: /\.js$/, loader: 'isparta', include: include, exclude: /\.spec\.js$/}
-] : [
-  {test: /\.js$/, loader: 'babel', include: include}
-];
+  {
+    test: /\.js$/,
+    loader: 'isparta',
+    include: include,
+    exclude: /\.spec\.js$/
+  }
+] : [{
+  test: /\.js$/,
+  loader: 'babel',
+  include: include
+}];
 
-var loaders = [
-  {test: /\.css$/, loader: 'null'},
-  {test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]'}
-];
+var loaders = [{
+  test: /\.css$/,
+  loader: 'null'
+}, {
+  test: /\.html$/,
+  loader: 'ng-cache?prefix=[dir]/[dir]'
+}];
 
 module.exports = (config) => {
   config.set({
@@ -51,12 +65,18 @@ module.exports = (config) => {
     coverageReporter: {
       dir: 'coverage/',
       subdir: '.',
-      reporters: [
-        {type: 'cobertura', file: 'cobertura.xml'},
-        {type: 'text', file: 'text.txt'},
-        {type: 'text-summary', file: 'text-summary.txt'},
-        {type: 'html'}
-      ]
+      reporters: [{
+        type: 'cobertura',
+        file: 'cobertura.xml'
+      }, {
+        type: 'text',
+        file: 'text.txt'
+      }, {
+        type: 'text-summary',
+        file: 'text-summary.txt'
+      }, {
+        type: 'html'
+      }]
     },
     port: 9876,
     colors: true,

@@ -15,18 +15,25 @@ module.exports = {
     chunkFilename: '[id].chunk.js'
   },
   module: {
-    loaders: [
-      {test: /\.js$/, loader: 'babel', include: path.resolve('src')},
-      {
-        test: /\.css$/,
-        loaders: [
-          'style',
-          'css?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]'
-        ]
-      },
-      {test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]'}
-    ],
-    preLoaders: [{test: /\.js$/, loader: 'eslint', include: path.resolve('src')}],
+    loaders: [{
+      test: /\.js$/,
+      loader: 'babel',
+      include: path.resolve('src')
+    }, {
+      test: /\.css$/,
+      loaders: [
+        'style',
+        'css?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]'
+      ]
+    }, {
+      test: /\.html$/,
+      loader: 'ng-cache?prefix=[dir]/[dir]'
+    }],
+    preLoaders: [{
+      test: /\.js$/,
+      loader: 'eslint',
+      include: path.resolve('src')
+    }],
     resolve: {
       alias: {
         angular$: path.resolve('src', 'vendor', 'angular.js'),
