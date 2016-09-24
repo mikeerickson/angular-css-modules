@@ -7,9 +7,12 @@ Sample Angular w/ CSS Modules
 ## Getting Started
 
 - download or clone
-  `$ git clone ...`
+
+`$ git clone https://github.com/mikeerickson/angular-css-modules`
+
 - install node modules
-  `$ npm install`
+
+`$ npm install`
 - build
   `$ webpack`
 - run tests
