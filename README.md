@@ -13,10 +13,15 @@ Sample Angular w/ CSS Modules
 - install node modules
 
 `$ npm install`
+
 - build
-  `$ webpack`
+
+`$ webpack`
+`$ npm run start` # runs w/ webpack-dev-server
+
 - run tests
-  `$ npm test`
+
+`$ npm test`
 
 ## Credits
 
