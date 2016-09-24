@@ -1,5 +1,5 @@
 var path = require('path');
-var hasCoverage = global.process.argv.reduce(function (result, arg) {
+var hasCoverage = global.process.argv.reduce((result, arg) => {
   return arg.indexOf('coverage') !== -1 || result;
 });
 
@@ -23,7 +23,7 @@ var loaders = [
   {test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]'}
 ];
 
-module.exports = function (config) {
+module.exports = (config) => {
   config.set({
     basePath: '',
     frameworks: ['jasmine'],

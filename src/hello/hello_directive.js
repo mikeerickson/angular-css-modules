@@ -2,7 +2,7 @@ import styles from './hello.css';
 
 
 const $inject = [];
-const Hello = function () {
+const Hello = () => {
   const link = $scope => {
     $scope.hello = 'Angular w/ CSS Modules';
     $scope.styles = styles;

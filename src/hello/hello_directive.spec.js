@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 
-describe('Hello Directive', function () {
+describe('Hello Directive', () => {
   let $scope;
   let $element;
 

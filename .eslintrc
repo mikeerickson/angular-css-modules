@@ -2,13 +2,13 @@
   "extends": "./src/.eslintrc",
   "env": {
     "browser": false,
-    "es6": false
+    "es6": true
   },
   "rules": {
     "object-shorthand": 0,
     "no-var": 0,
     "no-console": 0,
     "no-process-env": 0,
-    "maxl-len": 0, // i dont worry about max lenght so turning it off globally
+    "maxl-len": 0, // i dont worry about max length so turning it off globally
   }
 }
