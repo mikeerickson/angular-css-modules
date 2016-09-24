@@ -1,6 +1,11 @@
 const path = require('path');
+
 const hasCoverage = global.process.argv.reduce((result, arg) => {
   return arg.indexOf('coverage') !== -1 || result;
+});
+
+const coverageConsole = global.process.argv.reduce((result, arg) => {
+  return arg.indexOf('coverage-console') !== -1 || arg.indexOf('console') !== -1;
 });
 
 const include = [
@@ -13,20 +18,20 @@ const preLoaders = hasCoverage ? [
   {
     test: /\.spec\.js$/,
     loader: 'babel',
-    include: include
+    include
   },
 
   // Process all non-test code with Isparta
   {
     test: /\.js$/,
     loader: 'isparta',
-    include: include,
+    include,
     exclude: /\.spec\.js$/
   }
 ] : [{
   test: /\.js$/,
   loader: 'babel',
-  include: include
+  include
 }];
 
 const loaders = [{
@@ -47,8 +52,8 @@ module.exports = (config) => {
     webpack: {
       devtool: 'eval',
       module: {
-        loaders: loaders,
-        preLoaders: preLoaders
+        loaders,
+        preLoaders
       },
       cache: true
     },
@@ -70,7 +75,7 @@ module.exports = (config) => {
         file: 'cobertura.xml'
       }, {
         type: 'text',
-        file: 'text.txt'
+        file: coverageConsole ? '' : 'test.txt'
       }, {
         type: 'text-summary',
         file: 'text-summary.txt'

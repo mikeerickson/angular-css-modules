@@ -48,8 +48,6 @@ module.exports = {
     }),
     new ProgressBarPlugin({
       format: chalk.yellow.bold('  Building Development [:bar] ') + chalk.green.bold(':percent') + chalk.bold(' (:elapsed seconds)'),
-      clear: false,
-      summary: true
     })
   ],
   devtool: 'eval-source-map',
@@ -62,6 +60,6 @@ module.exports = {
     contentBase: './src'
   },
   eslint: {
-    configFile: './src/.eslintrc'
+    configFile: '.eslintrc'
   }
 };
