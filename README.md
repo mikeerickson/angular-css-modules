@@ -17,6 +17,9 @@ Sample Angular w/ CSS Modules
 - build
 
 `$ webpack`
+
+- run webpack development server
+
 `$ npm run start` # runs w/ webpack-dev-server
 
 - run tests
