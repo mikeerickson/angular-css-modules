@@ -1,13 +1,13 @@
-var path = require('path');
-var hasCoverage = global.process.argv.reduce((result, arg) => {
+const path = require('path');
+const hasCoverage = global.process.argv.reduce((result, arg) => {
   return arg.indexOf('coverage') !== -1 || result;
 });
 
-var include = [
+const include = [
   path.resolve('./src')
 ];
 
-var preLoaders = hasCoverage ? [
+const preLoaders = hasCoverage ? [
 
   // Process test code with Babel
   {
@@ -29,7 +29,7 @@ var preLoaders = hasCoverage ? [
   include: include
 }];
 
-var loaders = [{
+const loaders = [{
   test: /\.css$/,
   loader: 'null'
 }, {

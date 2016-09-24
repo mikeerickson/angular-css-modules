@@ -1,7 +1,7 @@
-var path = require('path');
-var chalk = require('chalk');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const path = require('path');
+const chalk = require('chalk');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 /* eslint max-len: 0*/
 
