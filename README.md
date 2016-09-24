@@ -1,5 +1,5 @@
 # angular-css-modules
-#### Written by Mike Erickson
+##### Written by Mike Erickson
 
 ## Overview
 Sample Angular w/ CSS Modules

@@ -1,5 +1,9 @@
 var path = require('path');
+var chalk = require('chalk');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+
+/* eslint max-len: 0*/
 
 module.exports = {
   entry: {
@@ -34,6 +38,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve('src', 'index.html'),
       inject: 'body'
+    }),
+    new ProgressBarPlugin({
+      format: chalk.yellow.bold('  Building Development [:bar] ') + chalk.green.bold(':percent') + chalk.bold(' (:elapsed seconds)'),
+      clear: false,
+      summary: true
     })
   ],
   devtool: 'eval-source-map',
