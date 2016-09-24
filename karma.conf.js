@@ -10,10 +10,10 @@ var include = [
 var preLoaders = hasCoverage ? [
 
   // Process test code with Babel
-  {test: /_spec\.js$/, loader: 'babel', include: include},
+  {test: /\.spec\.js$/, loader: 'babel', include: include},
 
   // Process all non-test code with Isparta
-  {test: /\.js$/, loader: 'isparta', include: include, exclude: /_spec\.js$/}
+  {test: /\.js$/, loader: 'isparta', include: include, exclude: /\.spec\.js$/}
 ] : [
   {test: /\.js$/, loader: 'babel', include: include}
 ];
